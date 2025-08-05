@@ -28,16 +28,44 @@ Amazon Redshift: Data warehousing and analytics.
 
 ## Prerequisites
 
-High Level Architecture Walkthrough
-System Requirements
-Tools used and why
-Machine Learning Features Walkthrough
-Setting up the Architecture
-Financial Transactions Producer
-Creating High Throughput and High Performance Kafka Cluster
-Training Fraud Detection Model
-Machine Learning Features Implementation
-Reviewing Generated Model and Promoting them to Production
-Realtime Inference with Apache Spark
-Review Fraud Transactions Inference Results
-Outro
+1. High Level Architecture Walkthrough
+2. System Requirements
+3. Tools used and why
+4. Machine Learning Features Walkthrough
+### 5. Setting up the Architecture
+
+- `python -m venv venv`
+- `.\venv\Scripts\Activate.ps1`
+- `docker-compose.yaml`
+- `mkdir airflow > Dockerfile + requirements.txt`
+- `mkdir mlflow > Dockerfile + requirements.txt`
+- `touch wait-for-it.sh`
+- `touch .env`
+- `docker compose --profile flower up -d --build`
+- `docker compose --profile flower down (to stop container) - if needed`
+- `docker compose down -v (remove volume) - if needed`
+- `make sure all server working`
+  
+<img width="1886" height="919" alt="image" src="https://github.com/user-attachments/assets/fc828a2a-6083-42e5-a585-2634efe10ca5" />
+<img width="1892" height="702" alt="image" src="https://github.com/user-attachments/assets/e7c1841e-a117-4dc7-a611-d57e5623bc15" />
+<img width="1883" height="616" alt="image" src="https://github.com/user-attachments/assets/4faa4486-cddf-4a9e-a68b-5796f44f914e" />
+<img width="1872" height="989" alt="image" src="https://github.com/user-attachments/assets/318ae46d-3769-4ba1-ac7d-bfcbc4361d54" />
+
+if minio have no bucket 
+- chmod +x wait-for-it.sh
+- compose down minio
+- compose down mc
+- compose up mc build -d --build
+
+### 6. Financial Transactions Producer
+
+- mkdir producer > Dockerfile + requirements.txt + main.py
+- pip install -r producer/requirements.txt
+
+
+8. Creating High Throughput and High Performance Kafka Cluster
+9. Training Fraud Detection Model
+10. Machine Learning Features Implementation
+11. Reviewing Generated Model and Promoting them to Production
+12. Realtime Inference with Apache Spark
+13. Review Fraud Transactions Inference Results
