@@ -68,4 +68,9 @@ if minio have no bucket
 10. Machine Learning Features Implementation
 11. Reviewing Generated Model and Promoting them to Production
 12. Realtime Inference with Apache Spark
-13. Review Fraud Transactions Inference Results
+
+- mkdir inferencce > Dockerfile + requirements.txt
+- pip install -r inference/requirements.txt
+- compose up inference -d --build
+    
+14. Review Fraud Transactions Inference Results
